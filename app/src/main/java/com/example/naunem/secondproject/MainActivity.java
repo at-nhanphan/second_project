@@ -16,5 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
         tv1 = (TextView) findViewById(R.id.tv1);
         tv2 = (TextView) findViewById(R.id.tv2);
+
     }
 }
