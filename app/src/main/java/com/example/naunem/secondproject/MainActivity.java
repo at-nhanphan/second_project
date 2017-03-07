@@ -6,17 +6,16 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView text;
-    TextView branch;
+    TextView tv1;
+    TextView tv2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        text = (TextView) findViewById(R.id.text);
-        branch = (TextView) findViewById(R.id.branch2);
+        tv1 = (TextView) findViewById(R.id.tv1);
+        tv2 = (TextView) findViewById(R.id.tv2);
 
-        branch.setText("Ahihi");
     }
 }
