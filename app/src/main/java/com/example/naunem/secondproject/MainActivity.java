@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
 
         tv1 = (TextView) findViewById(R.id.tv1);
+
         edittext = (EditText) findViewById(R.id.edittext);
         aSwitch = (Switch) findViewById(R.id.switch1);
         aSwitch.setChecked(true);

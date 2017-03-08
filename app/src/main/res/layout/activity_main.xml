@@ -35,15 +35,16 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:id="@+id/checkbox"
-        android:layout_below="@+id/edittext"
+        android:layout_below="@+id/rdgroup"
         android:text="Male"/>
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rdgroup"
-        android:layout_below="@+id/checkbox">
+        android:layout_below="@+id/edittext">
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,10 +62,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/switch1"
-        android:layout_below="@+id/rdgroup"
-        android:showText="true"
-        android:textOn="enable"
-        android:textOff="disable"/>
+        android:text="new branch 1"
+        android:layout_below="@+id/checkbox"/>
 
     <Spinner
         android:layout_width="wrap_content"
