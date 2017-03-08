@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">SecondProject</string>
+    <string name="choose_a_position">Choose a position</string>
+
+    <string-array name="spinner_array">
+        <item>First</item>
+        <item>Second</item>
+        <item>Third</item>
+        <item>Fourth</item>
+        <item>Fiveth</item>
+        <item>Sixth</item>
+    </string-array>
 </resources>
