@@ -30,6 +30,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/tva"
         android:text="new branch 1"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img"
+        android:background="@mipmap/ic_launcher"/>
+
 
 
 </LinearLayout>
