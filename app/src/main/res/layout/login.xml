@@ -13,14 +13,17 @@
         android:text="Login"
         android:layout_below="@+id/temp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:background="#4fe4e4"/>
 
     <TextView
+        android:id="@+id/new_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fogot the password???"
+        android:text="Create a new account?"
         android:textColor="#57ace1"
         android:layout_below="@+id/login"
         android:layout_centerHorizontal="true"
-        android:textStyle="italic"/>
+        android:textStyle="italic"
+        />
 </RelativeLayout>

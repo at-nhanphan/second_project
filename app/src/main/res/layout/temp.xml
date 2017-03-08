@@ -4,10 +4,10 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/logo"
-        android:background="@mipmap/ic_launcher_round"
+        android:background="@mipmap/logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"/>
@@ -28,7 +28,11 @@
         android:layout_below="@+id/logo"
         android:layout_toRightOf="@+id/username"
         android:layout_alignLeft="@+id/edittext_pass"
-        android:drawableLeft="@mipmap/email"/>
+        android:drawableLeft="@mipmap/user"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:inputType="text"
+        android:ems="20"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,7 +42,7 @@
         android:layout_below="@+id/username"
         android:layout_marginTop="10dp"
         android:layout_alignBottom="@+id/edittext_pass"
-        android:paddingTop="10dp"/>
+        android:paddingTop="10dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -47,7 +51,18 @@
         android:layout_below="@+id/edittext_username"
         android:layout_toRightOf="@+id/password"
         android:layout_marginLeft="10dp"
-        android:drawableLeft="@mipmap/browser"
-        android:drawableRight="@mipmap/visibility"
-        android:inputType="textPassword"/>
+        android:drawableLeft="@mipmap/locked"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:ems="20"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showpass"
+        android:background="@mipmap/view"
+        android:layout_alignRight="@+id/edittext_pass"
+        android:layout_alignBottom="@+id/edittext_pass"
+        android:layout_marginBottom="10dp"/>
 </RelativeLayout>

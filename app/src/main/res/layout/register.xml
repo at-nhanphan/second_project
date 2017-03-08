@@ -94,5 +94,6 @@
         android:text="Register"
         android:layout_below="@+id/hobby"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:background="#4fe4e4"/>
 </RelativeLayout>
