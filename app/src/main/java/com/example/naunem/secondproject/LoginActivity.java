@@ -58,11 +58,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         if (MotionEvent.ACTION_DOWN == event.getAction()) {
-            Log.d("TAG", "onTouch: ");
+            Log.d("TAG", "onTouch: down");
             edtPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
         }
         if (MotionEvent.ACTION_UP == event.getAction()) {
             edtPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            Log.d("TAG", "onTouch: up");
         }
         return true;
     }
