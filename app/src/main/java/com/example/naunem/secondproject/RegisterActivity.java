@@ -34,6 +34,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     ImageView mImgShowPass;
     ArrayList<CheckBox> mLists = new ArrayList<>();
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +61,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mLists.add(mChkSuftWeb);
         mLists.add(mChkCommic);
     }
+
 
     public String getGender(){
         String mGender = "";
