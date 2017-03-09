@@ -17,41 +17,38 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    TextView tv1;
-    EditText edittext;
-    Switch aSwitch;
-    Spinner spinner;
-    Spinner spinner2;
+    TextView tvHello;
+    EditText edtText;
+    Switch swOn;
+    Spinner spnOrder;
+    Spinner spnList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv1 = (TextView) findViewById(R.id.tv1);
+        tvHello = (TextView) findViewById(R.id.tvHello);
+        edtText = (EditText) findViewById(R.id.edtText);
+        swOn = (Switch) findViewById(R.id.swOn);
+        swOn.setChecked(true);
+        spnOrder = (Spinner) findViewById(R.id.spnOrder);
+        spnOrder.setOnItemSelectedListener(this);
+        spnList = (Spinner) findViewById(R.id.spnList);
 
-        edittext = (EditText) findViewById(R.id.edittext);
-        aSwitch = (Switch) findViewById(R.id.switch1);
-        aSwitch.setChecked(true);
-        spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayList<String> lists = new ArrayList<>();
+        lists.add("lists 1");
+        lists.add("lists 2");
+        lists.add("lists 3");
+        lists.add("lists 4");
 
-        spinner.setOnItemSelectedListener(this);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, lists);
+        spnList.setAdapter(adapter);
 
-        ArrayList<String> list = new ArrayList<>();
-        list.add("list 1");
-        list.add("list 2");
-        list.add("list 3");
-        list.add("list 4");
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, list);
-        spinner2.setAdapter(adapter);
-
-
-        if (aSwitch.isChecked()) {
-            Log.d("TAG", "onCreate: " + aSwitch.isChecked());
+        if (swOn.isChecked()) {
+            Log.d("TAG", "onCreate: " + swOn.isChecked());
         } else {
-            Log.d("TAG", "onCreate: " + aSwitch.isChecked());
+            Log.d("TAG", "onCreate: " + swOn.isChecked());
         }
     }
 

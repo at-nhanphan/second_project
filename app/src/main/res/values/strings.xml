@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">SecondProject</string>
-    <string name="choose_a_position">Choose a position</string>
+    <string name="spinner.text.choose_a_position">Choose a position</string>
 
-    <string-array name="spinner_array">
+    <string-array name="spinner_arrays">
         <item>First</item>
         <item>Second</item>
         <item>Third</item>
