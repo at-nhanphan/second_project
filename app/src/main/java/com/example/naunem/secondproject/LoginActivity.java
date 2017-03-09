@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button btnLogin;
     ImageView imgShowPass;
     TextView tvCreateAccount;
+    private int mPasswordNotVisible = 1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
