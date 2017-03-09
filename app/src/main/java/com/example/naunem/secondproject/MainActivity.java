@@ -36,13 +36,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mSpnOrder.setOnItemSelectedListener(this);
         mSpnList = (Spinner) findViewById(R.id.spnList);
 
-        ArrayList<String> lists = new ArrayList<>();
-        lists.add("lists 1");
-        lists.add("lists 2");
-        lists.add("lists 3");
-        lists.add("lists 4");
+        ArrayList<String> mLists = new ArrayList<>();
+        mLists.add("mLists 1");
+        mLists.add("mLists 2");
+        mLists.add("mLists 3");
+        mLists.add("mLists 4");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, lists);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, mLists);
         mSpnList.setAdapter(adapter);
 
         if (mSwOn.isChecked()) {
