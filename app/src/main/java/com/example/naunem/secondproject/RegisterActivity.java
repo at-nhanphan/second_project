@@ -22,16 +22,16 @@ import java.util.ArrayList;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
 
-    EditText edtUsername;
-    EditText edtPassword;
-    RadioButton rbMale;
-    RadioButton rbFemale;
-    CheckBox chkFootball;
-    CheckBox chkListenMusic;
-    CheckBox chkSuftWeb;
-    CheckBox chkCommic;
-    Button btnRegister;
-    ImageView imgShowPass;
+    EditText mEdtUsername;
+    EditText mEdtPassword;
+    RadioButton mRbMale;
+    RadioButton mRbFemale;
+    CheckBox mChkFootball;
+    CheckBox mChkListenMusic;
+    CheckBox mChkSuftWeb;
+    CheckBox mChkCommic;
+    Button mBtnRegister;
+    ImageView mImgShowPass;
     ArrayList<CheckBox> lists = new ArrayList<>();
 
     @Override
@@ -39,43 +39,43 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
 
-        edtUsername = (EditText) findViewById(R.id.edtUsername);
-        edtPassword = (EditText) findViewById(R.id.edtPassword);
-        rbMale = (RadioButton) findViewById(R.id.rbMale);
-        rbFemale = (RadioButton) findViewById(R.id.rbFemale);
-        chkFootball = (CheckBox) findViewById(R.id.chkFootball);
-        chkListenMusic = (CheckBox) findViewById(R.id.chkListenMusic);
-        chkSuftWeb = (CheckBox) findViewById(R.id.chkSuftWeb);
-        chkCommic = (CheckBox) findViewById(R.id.chkCommic);
-        btnRegister = (Button) findViewById(R.id.btnRegister);
-        btnRegister.setOnClickListener(this);
-        imgShowPass = (ImageView) findViewById(R.id.imgShowPass);
-        imgShowPass.setOnTouchListener(this);
+        mEdtUsername = (EditText) findViewById(R.id.edtUsername);
+        mEdtPassword = (EditText) findViewById(R.id.edtPassword);
+        mRbMale = (RadioButton) findViewById(R.id.rbMale);
+        mRbFemale = (RadioButton) findViewById(R.id.rbFemale);
+        mChkFootball = (CheckBox) findViewById(R.id.chkFootball);
+        mChkListenMusic = (CheckBox) findViewById(R.id.chkListenMusic);
+        mChkSuftWeb = (CheckBox) findViewById(R.id.chkSuftWeb);
+        mChkCommic = (CheckBox) findViewById(R.id.chkCommic);
+        mBtnRegister = (Button) findViewById(R.id.btnRegister);
+        mBtnRegister.setOnClickListener(this);
+        mImgShowPass = (ImageView) findViewById(R.id.imgShowPass);
+        mImgShowPass.setOnTouchListener(this);
 
-        lists.add(chkFootball);
-        lists.add(chkListenMusic);
-        lists.add(chkSuftWeb);
-        lists.add(chkCommic);
+        lists.add(mChkFootball);
+        lists.add(mChkListenMusic);
+        lists.add(mChkSuftWeb);
+        lists.add(mChkCommic);
     }
 
     public String getGender(){
-        String gender = "";
-        if (rbMale.isChecked()) {
-            gender = rbMale.getText().toString();
+        String mGender = "";
+        if (mRbMale.isChecked()) {
+            mGender = mRbMale.getText().toString();
         } else {
-            gender = rbFemale.getText().toString();
+            mGender = mRbFemale.getText().toString();
         }
-        return "\nGender: " + gender;
+        return "\nGender: " + mGender;
     }
 
     public String getHobby(){
-        String hobby = "";
+        String mHobby = "";
         for (CheckBox item : lists) {
             if (item.isChecked()) {
-                hobby += item.getText().toString() + " ";
+                mHobby += item.getText().toString() + " ";
             }
         }
-        return "\nHobby: " + hobby;
+        return "\nHobby: " + mHobby;
     }
 
     @Override
@@ -83,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.btnRegister:
                 String result = "";
-                result += "Username: " + edtUsername.getText() + "\nPassword: " + edtPassword.getText() + getGender()  + getHobby();
+                result += "Username: " + mEdtUsername.getText() + "\nPassword: " + mEdtPassword.getText() + getGender()  + getHobby();
                 Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
 
                 Intent intentLogin = new Intent(this, LoginActivity.class);
@@ -95,10 +95,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         if (MotionEvent.ACTION_DOWN == event.getAction()) {
-            edtPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+            mEdtPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
         }
         if (MotionEvent.ACTION_UP == event.getAction()) {
-            edtPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            mEdtPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         }
         return true;
     }
