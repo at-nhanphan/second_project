@@ -20,32 +20,32 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
 
-    EditText edtUsername;
-    EditText edtPassword;
-    Button btnLogin;
-    ImageView imgShowPass;
-    TextView tvCreateAccount;
+    EditText mEdtUsername;
+    EditText mEdtPassword;
+    Button mBtnLogin;
+    ImageView mImgShowPass;
+    TextView mTvCreateAccount;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        edtUsername = (EditText) findViewById(R.id.edtUsername);
-        edtPassword = (EditText) findViewById(R.id.edtPassword);
-        btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(this);
-        imgShowPass = (ImageView) findViewById(R.id.imgShowPass);
-        tvCreateAccount = (TextView) findViewById(R.id.tvCreateAccount);
-        tvCreateAccount.setOnClickListener(this);
-        imgShowPass.setOnTouchListener(this);
+        mEdtUsername = (EditText) findViewById(R.id.edtUsername);
+        mEdtPassword = (EditText) findViewById(R.id.edtPassword);
+        mBtnLogin = (Button) findViewById(R.id.btnLogin);
+        mBtnLogin.setOnClickListener(this);
+        mImgShowPass = (ImageView) findViewById(R.id.imgShowPass);
+        mTvCreateAccount = (TextView) findViewById(R.id.tvCreateAccount);
+        mTvCreateAccount.setOnClickListener(this);
+        mImgShowPass.setOnTouchListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnLogin:
-                Toast.makeText(this, "Username: " + edtUsername.getText().toString() + "\nPassword: " + edtPassword.getText().toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Username: " + mEdtUsername.getText().toString() + "\nPassword: " + mEdtPassword.getText().toString(), Toast.LENGTH_LONG).show();
                 Intent intentMain = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intentMain);
                 break;
@@ -59,10 +59,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public boolean onTouch(View v, MotionEvent event) {
         if (MotionEvent.ACTION_DOWN == event.getAction()) {
             Log.d("TAG", "onTouch: down");
-            edtPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+            mEdtPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
         }
         if (MotionEvent.ACTION_UP == event.getAction()) {
-            edtPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            mEdtPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
             Log.d("TAG", "onTouch: up");
         }
         return true;

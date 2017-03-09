@@ -17,24 +17,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    TextView tvHello;
-    EditText edtText;
-    Switch swOn;
-    Spinner spnOrder;
-    Spinner spnList;
+    TextView mTvHello;
+    EditText mEdtText;
+    Switch mSwOn;
+    Spinner mSpnOrder;
+    Spinner mSpnList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvHello = (TextView) findViewById(R.id.tvHello);
-        edtText = (EditText) findViewById(R.id.edtText);
-        swOn = (Switch) findViewById(R.id.swOn);
-        swOn.setChecked(true);
-        spnOrder = (Spinner) findViewById(R.id.spnOrder);
-        spnOrder.setOnItemSelectedListener(this);
-        spnList = (Spinner) findViewById(R.id.spnList);
+        mTvHello = (TextView) findViewById(R.id.tvHello);
+        mEdtText = (EditText) findViewById(R.id.edtText);
+        mSwOn = (Switch) findViewById(R.id.swOn);
+        mSwOn.setChecked(true);
+        mSpnOrder = (Spinner) findViewById(R.id.spnOrder);
+        mSpnOrder.setOnItemSelectedListener(this);
+        mSpnList = (Spinner) findViewById(R.id.spnList);
 
         ArrayList<String> lists = new ArrayList<>();
         lists.add("lists 1");
@@ -43,12 +43,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lists.add("lists 4");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, lists);
-        spnList.setAdapter(adapter);
+        mSpnList.setAdapter(adapter);
 
-        if (swOn.isChecked()) {
-            Log.d("TAG", "onCreate: " + swOn.isChecked());
+        if (mSwOn.isChecked()) {
+            Log.d("TAG", "onCreate: " + mSwOn.isChecked());
         } else {
-            Log.d("TAG", "onCreate: " + swOn.isChecked());
+            Log.d("TAG", "onCreate: " + mSwOn.isChecked());
         }
     }
 
