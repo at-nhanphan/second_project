@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/temp"
-        android:id="@+id/gender">
+        android:id="@+id/llGender">
 
         <TextView
             android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radiogroup"
+            android:id="@+id/rgGender"
             android:orientation="horizontal"
             android:layout_marginLeft="25dp">
 
@@ -29,13 +29,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Male"
-                android:id="@+id/male"/>
+                android:id="@+id/rbMale"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Female"
-                android:id="@+id/female"
+                android:id="@+id/rbFemale"
                 android:layout_marginLeft="50dp"/>
         </RadioGroup>
     </LinearLayout>
@@ -43,56 +43,56 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/gender"
+        android:layout_below="@+id/llGender"
         android:layout_marginTop="10dp"
-        android:id="@+id/hobby">
+        android:id="@+id/rlHobby">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_hobby"
+            android:id="@+id/tvHobby"
             android:text="Hobby"
             android:paddingTop="8dp"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cb_football"
+            android:id="@+id/chkFootball"
             android:text="Football"
-            android:layout_toRightOf="@+id/tv_hobby"
+            android:layout_toRightOf="@+id/tvHobby"
             android:layout_marginLeft="30dp"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cb_listen_music"
+            android:id="@+id/chkListenMusic"
             android:text="Listen Music"
-            android:layout_toRightOf="@+id/cb_football"
+            android:layout_toRightOf="@+id/chkFootball"
             android:layout_marginLeft="30dp"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cb_suft_web"
+            android:id="@+id/chkSuftWeb"
             android:text="Suft website"
-            android:layout_below="@id/cb_football"
-            android:layout_alignLeft="@+id/cb_football"/>
+            android:layout_below="@id/chkFootball"
+            android:layout_alignLeft="@+id/chkFootball"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cb_commic"
+            android:id="@+id/chkCommic"
             android:text="Commic"
-            android:layout_toRightOf="@+id/cb_suft_web"
-            android:layout_below="@+id/cb_listen_music"
-            android:layout_alignLeft="@+id/cb_listen_music"/>
+            android:layout_toRightOf="@+id/chkSuftWeb"
+            android:layout_below="@+id/chkListenMusic"
+            android:layout_alignLeft="@+id/chkListenMusic"/>
     </RelativeLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/register"
+        android:id="@+id/btnRegister"
         android:text="Register"
-        android:layout_below="@+id/hobby"
+        android:layout_below="@+id/rlHobby"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="#4fe4e4"/>

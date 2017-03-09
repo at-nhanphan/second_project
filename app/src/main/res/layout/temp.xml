@@ -6,8 +6,8 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/logo"
-        android:background="@mipmap/logo"
+        android:id="@+id/imgLogo"
+        android:background="@mipmap/ic_logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"/>
@@ -15,20 +15,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/username"
+        android:id="@+id/tvUsername"
         android:text="Username"
-        android:layout_below="@+id/logo"
+        android:layout_below="@+id/imgLogo"
         android:paddingTop="20dp"
-        android:layout_alignBottom="@+id/edittext_username"/>
+        android:layout_alignBottom="@+id/edtUsername"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edittext_username"
-        android:layout_below="@+id/logo"
-        android:layout_toRightOf="@+id/username"
-        android:layout_alignLeft="@+id/edittext_pass"
-        android:drawableLeft="@mipmap/user"
+        android:id="@+id/edtUsername"
+        android:layout_below="@+id/imgLogo"
+        android:layout_toRightOf="@+id/tvUsername"
+        android:layout_alignLeft="@+id/edtPassword"
+        android:drawableLeft="@mipmap/ic_user"
         android:maxLines="1"
         android:ellipsize="end"
         android:inputType="text"
@@ -37,21 +37,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/password"
+        android:id="@+id/tvPassword"
         android:text="Password"
-        android:layout_below="@+id/username"
+        android:layout_below="@+id/tvUsername"
         android:layout_marginTop="10dp"
-        android:layout_alignBottom="@+id/edittext_pass"
+        android:layout_alignBottom="@+id/edtPassword"
         android:paddingTop="10dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edittext_pass"
-        android:layout_below="@+id/edittext_username"
-        android:layout_toRightOf="@+id/password"
+        android:id="@+id/edtPassword"
+        android:layout_below="@+id/edtUsername"
+        android:layout_toRightOf="@+id/tvPassword"
         android:layout_marginLeft="10dp"
-        android:drawableLeft="@mipmap/locked"
+        android:drawableLeft="@mipmap/ic_locked"
         android:inputType="textPassword"
         android:maxLines="1"
         android:ellipsize="end"
@@ -60,9 +60,9 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/showpass"
-        android:background="@mipmap/view"
-        android:layout_alignRight="@+id/edittext_pass"
-        android:layout_alignBottom="@+id/edittext_pass"
+        android:id="@+id/imgShowPass"
+        android:background="@mipmap/ic_view"
+        android:layout_alignRight="@+id/edtPassword"
+        android:layout_alignBottom="@+id/edtPassword"
         android:layout_marginBottom="10dp"/>
 </RelativeLayout>

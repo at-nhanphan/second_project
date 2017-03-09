@@ -11,12 +11,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-
-import static android.R.id.list;
 
 /**
  * Created by naunem on 08/03/2017.
@@ -24,76 +21,76 @@ import static android.R.id.list;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText username;
-    EditText pass;
-    RadioButton rdMale;
-    RadioButton rdFemale;
-    CheckBox cbFootball;
-    CheckBox cbListenMusic;
-    CheckBox cbSuftWeb;
-    CheckBox cbCommic;
+    EditText edtUsername;
+    EditText edtPassword;
+    RadioButton rbMale;
+    RadioButton rbFemale;
+    CheckBox chkFootball;
+    CheckBox chkListenMusic;
+    CheckBox chkSuftWeb;
+    CheckBox chkCommic;
     Button btnRegister;
-    ImageView showpass;
-    ArrayList<CheckBox> list = new ArrayList<>();
-    private int passwordNotVisible = 1;
+    ImageView imgShowPass;
+    ArrayList<CheckBox> lists = new ArrayList<>();
+    private int mPasswordNotVisible = 1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
 
-        username = (EditText) findViewById(R.id.edittext_username);
-        pass = (EditText) findViewById(R.id.edittext_pass);
-        rdMale = (RadioButton) findViewById(R.id.male);
-        rdFemale = (RadioButton) findViewById(R.id.female);
-        cbFootball = (CheckBox) findViewById(R.id.cb_football);
-        cbListenMusic = (CheckBox) findViewById(R.id.cb_listen_music);
-        cbSuftWeb = (CheckBox) findViewById(R.id.cb_suft_web);
-        cbCommic = (CheckBox) findViewById(R.id.cb_commic);
-        btnRegister = (Button) findViewById(R.id.register);
+        edtUsername = (EditText) findViewById(R.id.edtUsername);
+        edtPassword = (EditText) findViewById(R.id.edtPassword);
+        rbMale = (RadioButton) findViewById(R.id.rbMale);
+        rbFemale = (RadioButton) findViewById(R.id.rbFemale);
+        chkFootball = (CheckBox) findViewById(R.id.chkFootball);
+        chkListenMusic = (CheckBox) findViewById(R.id.chkListenMusic);
+        chkSuftWeb = (CheckBox) findViewById(R.id.chkSuftWeb);
+        chkCommic = (CheckBox) findViewById(R.id.chkCommic);
+        btnRegister = (Button) findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(this);
-        showpass = (ImageView) findViewById(R.id.showpass);
-        showpass.setOnClickListener(this);
+        imgShowPass = (ImageView) findViewById(R.id.imgShowPass);
+        imgShowPass.setOnClickListener(this);
 
-        list.add(cbFootball);
-        list.add(cbListenMusic);
-        list.add(cbSuftWeb);
-        list.add(cbCommic);
+        lists.add(chkFootball);
+        lists.add(chkListenMusic);
+        lists.add(chkSuftWeb);
+        lists.add(chkCommic);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.register:
+            case R.id.btnRegister:
                 String gender = "";
-                if (rdMale.isChecked()) {
-                    gender = rdMale.getText().toString();
+                if (rbMale.isChecked()) {
+                    gender = rbMale.getText().toString();
                 } else {
-                    gender = rdFemale.getText().toString();
+                    gender = rbFemale.getText().toString();
                 }
 
                 String hobby = "";
-                for (CheckBox item : list) {
+                for (CheckBox item : lists) {
                     if (item.isChecked()) {
                         hobby += item.getText().toString() + " ";
                     }
                 }
                 String text = "";
-                text += "username: " + username.getText() + "\npass: " + pass.getText() + "\ngender: " + gender + "\nhobby: " + hobby;
+                text += "edtUsername: " + edtUsername.getText() + "\nedtPassword: " + edtPassword.getText() + "\ngender: " + gender + "\nhobby: " + hobby;
                 Toast.makeText(this, "result: \n" + text, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.showpass:
-                if(passwordNotVisible == 1) {
-                    pass.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    passwordNotVisible = 0;
+            case R.id.imgShowPass:
+                if(mPasswordNotVisible == 1) {
+                    edtPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    mPasswordNotVisible = 0;
                 } else {
-                    pass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    passwordNotVisible = 1;
+                    edtPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    mPasswordNotVisible = 1;
                 }
-                pass.setSelection(pass.length());
+                edtPassword.setSelection(edtPassword.length());
                 break;
         }
     }

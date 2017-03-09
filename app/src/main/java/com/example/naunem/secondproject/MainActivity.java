@@ -17,35 +17,35 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    TextView tv1;
-    EditText edittext;
+    TextView tvHello;
+    EditText edtText;
     Switch aSwitch;
-    Spinner spinner;
-    Spinner spinner2;
+    Spinner spnOrder;
+    Spinner spnList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv1 = (TextView) findViewById(R.id.tv1);
+        tvHello = (TextView) findViewById(R.id.tvHello);
 
-        edittext = (EditText) findViewById(R.id.edittext);
+        edtText = (EditText) findViewById(R.id.edtText);
         aSwitch = (Switch) findViewById(R.id.switch1);
         aSwitch.setChecked(true);
-        spinner = (Spinner) findViewById(R.id.spinner);
+        spnOrder = (Spinner) findViewById(R.id.spnOrder);
 
-        spinner.setOnItemSelectedListener(this);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        spnOrder.setOnItemSelectedListener(this);
+        spnList = (Spinner) findViewById(R.id.spnList);
 
         ArrayList<String> list = new ArrayList<>();
-        list.add("list 1");
-        list.add("list 2");
-        list.add("list 3");
-        list.add("list 4");
+        list.add("lists 1");
+        list.add("lists 2");
+        list.add("lists 3");
+        list.add("lists 4");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, list);
-        spinner2.setAdapter(adapter);
+        spnList.setAdapter(adapter);
 
 
         if (aSwitch.isChecked()) {
