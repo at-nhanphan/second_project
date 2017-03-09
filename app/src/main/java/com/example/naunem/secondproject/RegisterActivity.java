@@ -62,7 +62,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mLists.add(mChkCommic);
     }
 
-
+    /** get Gender of user
+     *
+     * @return String mGender
+     */
     public String getGender(){
         String mGender = "";
         if (mRbMale.isChecked()) {
@@ -73,6 +76,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         return "\nGender: " + mGender;
     }
 
+    /** get Hobby of user
+     *
+     * @return String mHobby
+     */
     public String getHobby(){
         String mHobby = "";
         for (CheckBox item : mLists) {
