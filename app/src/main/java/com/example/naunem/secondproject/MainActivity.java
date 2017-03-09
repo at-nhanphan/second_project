@@ -16,8 +16,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
-
     ImageView mImgBack;
     ImageView mImgSettings;
     @Override
