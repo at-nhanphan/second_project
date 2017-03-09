@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     CheckBox mChkCommic;
     Button mBtnRegister;
     ImageView mImgShowPass;
-    ArrayList<CheckBox> lists = new ArrayList<>();
+    ArrayList<CheckBox> mLists = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,10 +52,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mImgShowPass = (ImageView) findViewById(R.id.imgShowPass);
         mImgShowPass.setOnTouchListener(this);
 
-        lists.add(mChkFootball);
-        lists.add(mChkListenMusic);
-        lists.add(mChkSuftWeb);
-        lists.add(mChkCommic);
+        mLists.add(mChkFootball);
+        mLists.add(mChkListenMusic);
+        mLists.add(mChkSuftWeb);
+        mLists.add(mChkCommic);
     }
 
     public String getGender(){
@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     public String getHobby(){
         String mHobby = "";
-        for (CheckBox item : lists) {
+        for (CheckBox item : mLists) {
             if (item.isChecked()) {
                 mHobby += item.getText().toString() + " ";
             }
