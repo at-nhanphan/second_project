@@ -62,14 +62,14 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/switch1"
+        android:id="@+id/swOn"
         android:layout_below="@+id/chkGender"/>
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spnOrder"
-        android:layout_below="@+id/switch1"
+        android:layout_below="@+id/swOn"
         android:entries="@array/spinner_arrays"
         android:prompt="@string/spinner.text.choose_a_position"
         android:spinnerMode="dialog">

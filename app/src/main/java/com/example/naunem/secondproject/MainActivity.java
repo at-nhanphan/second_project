@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     TextView tvHello;
     EditText edtText;
-    Switch aSwitch;
+    Switch swOn;
     Spinner spnOrder;
     Spinner spnList;
 
@@ -29,29 +29,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
 
         tvHello = (TextView) findViewById(R.id.tvHello);
-
         edtText = (EditText) findViewById(R.id.edtText);
-        aSwitch = (Switch) findViewById(R.id.switch1);
-        aSwitch.setChecked(true);
+        swOn = (Switch) findViewById(R.id.swOn);
+        swOn.setChecked(true);
         spnOrder = (Spinner) findViewById(R.id.spnOrder);
-
         spnOrder.setOnItemSelectedListener(this);
         spnList = (Spinner) findViewById(R.id.spnList);
 
-        ArrayList<String> list = new ArrayList<>();
-        list.add("lists 1");
-        list.add("lists 2");
-        list.add("lists 3");
-        list.add("lists 4");
+        ArrayList<String> lists = new ArrayList<>();
+        lists.add("lists 1");
+        lists.add("lists 2");
+        lists.add("lists 3");
+        lists.add("lists 4");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, list);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, lists);
         spnList.setAdapter(adapter);
 
-
-        if (aSwitch.isChecked()) {
-            Log.d("TAG", "onCreate: " + aSwitch.isChecked());
+        if (swOn.isChecked()) {
+            Log.d("TAG", "onCreate: " + swOn.isChecked());
         } else {
-            Log.d("TAG", "onCreate: " + aSwitch.isChecked());
+            Log.d("TAG", "onCreate: " + swOn.isChecked());
         }
     }
 
